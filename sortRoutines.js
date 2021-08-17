@@ -188,7 +188,7 @@ function displayArray() {
     }
     itemsSorted = true;
 }
-
+var stuff = 1;
 function linearSearch() {
     var theFind = document.getElementById("strFind").value;
     var i = 0;
