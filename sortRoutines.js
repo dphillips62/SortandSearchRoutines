@@ -188,7 +188,7 @@ function displayArray() {
     }
     itemsSorted = true;
 }
-
+var sdfkhads = 23;
 function linearSearch() {
     var theFind = document.getElementById("strFind").value;
     var i = 0;
