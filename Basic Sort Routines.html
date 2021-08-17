@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="Intro">
+        <h1>Sort Routines</h1>
+        <button type="button" id="btnBubble" class="button" onclick="runBubble()" style="width:100px">Bubble
+            Sort</button>
+        <button type="button" id="btnSelection" class="button" onclick="runSelection()" style="width:100px">Selection
+            Sort</button>
+        <button type="button" id="btnINsertion" class="button" onclick="runInsertion()" style="width:100px">Insertion
+            Sort</button>
+    </div>
+
+    <div id="Bubble">
+        <h1>Bubble Sort</h1>
+    </div>
+    <div id="Selection">
+        <h1>Selection Sort</h1>
+    </div>
+    <div id="Insertion">
+        <h1>Insertion Sort</h1>
+    </div>
+
+
+    <div id="generateStrings">
+        <h4>Enter details below then press the button</h4>
+        <input type="text" id="strLength">Length of String?</input>
+        <br>
+        <br>
+        <input type="text" name="weight" id="strNumber">How Many Different Strings?</input>
+        <br>
+        <br>
+        <button type="button" id="btnGo" style="width:100px" class="button"
+            onclick="generateStrings()">Calculate</button>
+
+        <button type="button" id="btnSort" class="button" onclick="pickSorts()" style="width:100px">Sort</button>
+        <br>
+        <br>
+        <textarea rows=20 cols=30 id="txtOutput"></textarea>
+        <textarea rows=20 cols=30 id="txtSortOutput"></textarea>
+        <br>
+        <p>Enter a pattern to do a search for these characters, if they
+            exist.</p>
+        <input type="text" name="weight" id="strSearchText" placeholder="Enter string here..."></input>
+        <br>
+        <br>
+        <button type="button" id="btnLinearSearch" class="button" onclick="linearSearch()" style="width:100px">Use
+            Linear Search</button>
+        <button type="button" id="btnBinarySearch" class="button" onclick="binarySearch()" style="width:100px">Use
+            Binary Search</button>
+        <br>
+        <br>
+        <button type="button" id="btnReturn" class="button" onclick="mainMenu()" style="width:100px">Return to
+            Main Menu</button>
+    </div>
+
+    <script src="sortRoutines.js">
+    </script>
+</body>
+
+</html>
