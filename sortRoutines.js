@@ -3,6 +3,9 @@ var bubbleDiv = document.getElementById("Bubble")
 var selectionDiv = document.getElementById("Selection")
 var insertionDiv = document.getElementById("Insertion")
 var generateStringsDiv = document.getElementById("generateStrings")
+var generateNumsDiv = document.getElementById("generateNumbers")
+var whatGen = document.getElementById("generateWhat")
+var displayData = document.getElementById("displayData")
 var sortNumber = 0;
 var string_Length = document.getElementById("strLength");
 var string_Number = document.getElementById("strNumber");
@@ -19,6 +22,9 @@ document.body.onload = function () { //when the page loads get a random number
     selectionDiv.style.display = "none"
     insertionDiv.style.display = "none"
     generateStringsDiv.style.display = "none"
+    whatGen.style.display = "none"
+    displayData.style.display = "none"
+    generateNumsDiv.style.display = "none"
     sortNumber = 0;
 }
 
@@ -27,7 +33,10 @@ function runBubble() {
     bubbleDiv.style.display = "block"
     selectionDiv.style.display = "none"
     insertionDiv.style.display = "none"
-    generateStringsDiv.style.display = "block"
+    generateStringsDiv.style.display = "none"
+    whatGen.style.display = "block"
+    displayData.style.display = "none"
+    generateNumsDiv.style.display = "none"
     sortNumber = 1;
 }
 
@@ -36,7 +45,10 @@ function runSelection() {
     bubbleDiv.style.display = "none"
     selectionDiv.style.display = "block"
     insertionDiv.style.display = "none"
-    generateStringsDiv.style.display = "block"
+    generateStringsDiv.style.display = "none"
+    whatGen.style.display = "block"
+    displayData.style.display = "none"
+    generateNumsDiv.style.display = "none"
     sortNumber = 2;
 }
 
@@ -45,7 +57,30 @@ function runInsertion() {
     bubbleDiv.style.display = "none"
     selectionDiv.style.display = "none"
     insertionDiv.style.display = "block"
+    generateStringsDiv.style.display = "none"
+    whatGen.style.display = "block"
+    displayData.style.display = "none"
+    generateNumsDiv.style.display = "none"
+    sortNumber = 3;
+}
+
+function genNumbers() {
+    introDiv.style.display = "none"
+    bubbleDiv.style.display = "none"
+    selectionDiv.style.display = "none"
+    insertionDiv.style.display = "block"
+    generateNumsDiv.style.display = "block"
+    generateStringsDiv.style.display = "none"
+    sortNumber = 3;
+}
+
+function genStrings() {
+    introDiv.style.display = "none"
+    bubbleDiv.style.display = "none"
+    selectionDiv.style.display = "none"
+    insertionDiv.style.display = "block"
     generateStringsDiv.style.display = "block"
+    generateNumsDiv.style.display = "none"
     sortNumber = 3;
 }
 
@@ -55,6 +90,9 @@ function mainMenu() {
     selectionDiv.style.display = "none"
     insertionDiv.style.display = "none"
     generateStringsDiv.style.display = "none"
+    generateNumsDiv.style.display = "none"
+    displayData.style.display = "none"
+    whatGen.style.display = "none"
     sortNumber = 0;
     theOutput.value = "";
     txtSortOutput.value = "";
@@ -102,13 +140,38 @@ function generateStrings() {
         }
     }
     itemsSorted = false;
+    displayData.style.display = "block"
 }
+
+function generateNumbers() {
+
+    minNumber = Number(minNum.value);
+    maxNumber = Number(maxNum.value);
+    totNumbers = Number(totNum.value);
+
+    var random_string = "";
+    var random_ascii;
+    theOutput.value = "";
+    strArray = [];
+
+    for (var j = 0; j < totNumbers; j++) {
+        strArray.push(Math.floor(Math.random() * (maxNumber - minNumber + 1) ) + minNumber);
+        random_string = "";
+    }
+
+    for (i = 0; i < strArray.length; i++) {
+        theOutput.value = theOutput.value + strArray[i] + "\n"
+    }
+    itemsSorted = false;
+    displayData.style.display = "block"
+}
+
+//Bubble Sort----------------------------------------------------------------------
 
 function bubbleSort() {
     var swapped = true,
         swapping = 0,
         len = strArray.length - 1;
-    //Bubble Sort
     while (swapped === true) {
         swapped = false;
         i = 0;
@@ -125,6 +188,8 @@ function bubbleSort() {
     }
     displayArray();
 };
+
+//Selection Sort----------------------------------------------------------------------
 
 function selectionSort() {
 
@@ -153,6 +218,8 @@ function selectionSort() {
     }
     displayArray();
 }
+
+//Insertion Sort----------------------------------------------------------------------
 
 function insertionSort() {
 
@@ -188,9 +255,11 @@ function displayArray() {
     }
     itemsSorted = true;
 }
-var sdfkhads = 23;
+
+//Linear Search----------------------------------------------------------------------
+
 function linearSearch() {
-    var theFind = document.getElementById("strFind").value;
+    var theFind = searchText.value;
     var i = 0;
     var foundIt = false;
     while (foundIt === false && i <= strArray.length - 1) {
@@ -206,6 +275,8 @@ function linearSearch() {
         alert("Name not found");
     }
 }
+
+//Binary Search----------------------------------------------------------------------
 
 function binarySearch() {
 

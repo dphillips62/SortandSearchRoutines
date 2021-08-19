@@ -29,6 +29,7 @@
         <h1>Insertion Sort</h1>
     </div>
 
+
     <div id="generateWhat">
         <button type="button" id="btnNumbers" class="button" onclick="genNumbers()" style="width:100px">Generate
             Numbers?</button>
@@ -47,12 +48,29 @@
         <br>
         <button type="button" id="btnGo" style="width:100px" class="button"
             onclick="generateStrings()">Calculate</button>
+    </div>
 
-        <button type="button" id="btnSort" class="button" onclick="pickSorts()" style="width:100px">Sort</button>
+
+    <div id="generateNumbers">
+        <h4>Enter details below then press the button</h4>
+        <input type="text" id="minNum">Min Number?</input>
+        <input type="text" id="maxNum">Max Number?</input>
         <br>
+        <br>
+        <input type="text" name="weight" id="totNum">How Many Numbers in Total?</input>
+        <br>
+        <br>
+        <button type="button" id="btnGo" style="width:100px" class="button"
+            onclick="generateNumbers()">Calculate</button>
+    </div>
+
+
+    <div id="displayData">
         <br>
         <textarea rows=20 cols=30 id="txtOutput"></textarea>
         <textarea rows=20 cols=30 id="txtSortOutput"></textarea>
+        <H3>Now sort them...</H3>
+        <button type="button" id="btnSort" class="button" onclick="pickSorts()" style="width:100px">Sort</button>
         <br>
         <p>Enter a pattern to do a search for these characters, if they
             exist.</p>
@@ -68,6 +86,7 @@
         <button type="button" id="btnReturn" class="button" onclick="mainMenu()" style="width:100px">Return to
             Main Menu</button>
     </div>
+
 
     <script src="sortRoutines.js">
     </script>
